@@ -44,4 +44,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-        run: gh release create "$GITHUB_REF_NAME" dist/* --title "dotbot $GITHUB_REF_NAME" --generate-notes
+        run: |
+          args=()
+          if [[ "$GITHUB_REF_NAME" == *-* ]]; then args+=(--prerelease); fi
+          gh release create "$GITHUB_REF_NAME" dist/* --title "dotbot $GITHUB_REF_NAME" --generate-notes "${args[@]}"
