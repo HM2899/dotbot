@@ -1,0 +1,19 @@
+[Unit]
+Description=dotbot persistent agent team
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin
+# All installations require `dotbot admin-password` before starting.
+# For public deployment, also add your HTTPS origin:
+# ExecStart=%h/.local/bin/dotbot serve --port 4870 --public-url https://team.example.com
+ExecStart=%h/.local/bin/dotbot serve --port 4870
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+KillMode=control-group
+
+[Install]
+WantedBy=default.target

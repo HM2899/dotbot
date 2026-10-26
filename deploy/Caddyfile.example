@@ -1,0 +1,9 @@
+# Replace team.example.com with your domain; configure DNS before starting Caddy.
+# Caddy terminates HTTPS automatically. dotbot remains on loopback.
+team.example.com {
+    @internal path /internal /internal/*
+    respond @internal 404
+    reverse_proxy 127.0.0.1:4870 {
+        flush_interval -1
+    }
+}

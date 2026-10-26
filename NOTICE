@@ -1,0 +1,15 @@
+dotbot
+
+This program reimplements in Rust the memory format, the team file format and the
+protocol of DS Bot (https://github.com/Fei2411/DeepSeek-Bot), licensed under the Apache
+License 2.0, and follows parts of its prompts and rules. The memory files use the
+Markdown format of Agent Memory Repo (https://github.com/AgentMemoryRepo/agentmemoryrepo).
+
+crates/pi-agent-core contains a Rust translation and customization of pi-agent-core
+from https://github.com/earendil-works/pi, revision
+d5b3de22d0e24a3e9c38a9410d3329b099717283.
+Copyright (c) 2025 Mario Zechner, MIT License.
+The upstream license is retained in crates/pi-agent-core/LICENSE.
+
+Dependency versions, licenses and optional runtime components are described in
+THIRD_PARTY.md. Rust dependency notices are retained under licenses/rust/.

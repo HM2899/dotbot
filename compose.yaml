@@ -1,0 +1,18 @@
+# Two runtime containers: this service and the separate cloud computer created by dotbot.
+# Linux Docker Engine only; the cloud computer uses the teambot-desktops bridge.
+services:
+  dotbot:
+    image: ${DOTBOT_IMAGE:-dotbot:0.1.0}
+    build:
+      context: .
+    network_mode: host
+    restart: unless-stopped
+    stop_grace_period: 60s
+    environment:
+      DOTBOT_HOME: /srv/dotbot
+      HOME: /srv/dotbot
+    volumes:
+      # Keep the absolute path identical: sibling desktop mounts are resolved by the host daemon.
+      - /srv/dotbot:/srv/dotbot
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: ["serve", "--workspace", "/srv/dotbot/workspace"]

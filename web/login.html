@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#141414">
+  <meta name="robots" content="noindex,nofollow">
+  <title>登录 · dotbot</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/assets/login.css">
+  <script src="/assets/theme.js"></script>
+  <script src="/assets/login.js" defer></script>
+</head>
+<body>
+  <a class="login-brand" href="/" aria-label="dotbot 首页"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9Z" fill="currentColor"/><path d="m12 12 1 5m6-6 1 5" stroke="var(--bg)" stroke-width="2.5" stroke-linecap="round"/></svg><span>dotbot</span></a>
+  <main class="login-main">
+    <section class="login-panel" aria-labelledby="login-heading">
+      <div class="login-symbol" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 2 28 9v14l-12 7L4 23V9Z" fill="currentColor"/><path d="m12 12 1 5m6-6 1 5" stroke="var(--bg)" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+      <h1 id="login-heading">欢迎回来</h1>
+      <p class="login-intro">登录 dotbot，继续与你的团队协作。</p>
+      <form id="login-form" aria-busy="true">
+        <label for="username">管理员账号</label>
+        <input id="username" name="username" autocomplete="username" maxlength="64" required autocapitalize="none" spellcheck="false" disabled>
+        <label for="password">密码</label>
+        <div class="password-field"><input id="password" name="password" type="password" autocomplete="current-password" maxlength="256" required disabled><button id="toggle-password" type="button" aria-label="显示密码" aria-pressed="false" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+        <label class="login-remember" for="remember"><input id="remember" name="remember" type="checkbox" disabled><span>保持登录 30 天</span></label>
+        <p id="login-error" class="login-error" role="alert" hidden></p>
+        <button id="login-submit" class="login-submit" type="submit" disabled><span>正在加载…</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+      </form>
+      <noscript><p class="login-error">请启用 JavaScript 后登录。</p></noscript>
+    </section>
+  </main>
+  <footer>你的 Bot，你的工作空间。</footer>
+</body>
+</html>

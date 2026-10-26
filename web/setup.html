@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#141414">
+  <meta name="robots" content="noindex,nofollow">
+  <title>首次设置 · dotbot</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/assets/login.css">
+  <script src="/assets/theme.js"></script>
+  <script src="/assets/setup.js" defer></script>
+</head>
+<body>
+  <a class="login-brand" href="/" aria-label="dotbot 首页"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14l-12 7L4 23V9Z" fill="currentColor"/><path d="m12 12 1 5m6-6 1 5" stroke="var(--bg)" stroke-width="2.5" stroke-linecap="round"/></svg><span>dotbot</span></a>
+  <main class="login-main">
+    <section class="login-panel" aria-labelledby="setup-heading">
+      <p class="setup-progress" id="setup-progress" aria-live="polite">第 1 步，共 2 步 · 管理员账号</p>
+      <h1 id="setup-heading">欢迎使用 dotbot</h1>
+      <p class="login-intro" id="setup-intro">先设置专属管理员账号，开始与你的团队协作。</p>
+      <form id="setup-form" aria-busy="true" novalidate>
+        <fieldset id="account-step" disabled>
+          <label for="setup-username">管理员用户名</label>
+          <input id="setup-username" name="username" autocomplete="username" value="admin" maxlength="64" required autocapitalize="none" spellcheck="false">
+          <label for="setup-password">新密码</label>
+          <input id="setup-password" name="password" type="password" autocomplete="new-password" minlength="6" maxlength="256" placeholder="至少 6 个字符" required>
+          <label for="setup-confirm">确认新密码</label>
+          <input id="setup-confirm" type="password" autocomplete="new-password" maxlength="256" required>
+        </fieldset>
+        <fieldset id="profile-step" disabled hidden>
+          <label for="setup-name">昵称</label>
+          <input id="setup-name" name="name" autocomplete="nickname" maxlength="40" placeholder="聊天中显示的名字" required>
+          <label for="setup-bio">个人简介（选填）</label>
+          <textarea id="setup-bio" name="bio" maxlength="500" rows="3" placeholder="告诉 Bot 你的工作和偏好"></textarea>
+          <p class="setup-help">昵称和简介可随时在设置中修改，头像也可稍后添加。</p>
+        </fieldset>
+        <p id="setup-error" class="login-error" role="alert" hidden></p>
+        <div class="setup-actions"><button id="setup-back" class="setup-back" type="button" hidden>上一步</button><button id="setup-submit" class="login-submit" type="submit" disabled><span>正在加载…</span></button></div>
+      </form>
+      <button id="setup-logout" class="setup-signout" type="button">退出设置</button>
+      <noscript><p class="login-error">请启用 JavaScript 后完成设置。</p></noscript>
+    </section>
+  </main>
+  <footer>你的 Bot，你的工作空间。</footer>
+</body>
+</html>
